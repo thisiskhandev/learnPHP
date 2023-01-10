@@ -10,7 +10,6 @@
 <?php
 
 $message = "Just message!";
-echo "testing";
 echo "<script>console.log('$message')</script>";
 
 

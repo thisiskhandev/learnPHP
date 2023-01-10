@@ -1,9 +1,10 @@
 <?php
-/*
+
 $cars = Array("BMW", "Mercedes", "Tesla", "Toyota");
 $cars_2 = ["BMW", "Mercedes", "Tesla", "Toyota"];
 $fruits = array("apple", "banana", "orange");
 
+/*
 $recursive_array = array(
     "chemistry", "Hassan" => 20, "Sarim" => 90
 ); 
@@ -38,7 +39,7 @@ echo "<br> <h2>Count function</h2>";
 echo count($recursive_array);
 
 echo sizeof($recursive_array);
-*/
+
 
 # Multi dimensional arrays
 $food = array(
@@ -54,6 +55,13 @@ echo "<br>";
 $encodeJson = json_encode($food);
 echo "<h2>Encoding Array into JSON format</h2> ". $encodeJson;
 echo "<br><h2>Decoded JSON</h2>";
-print_r(json_decode($encodeJson));
+$decodedJson = json_decode(($encodeJson));
+print_r($decodedJson);
+echo "How many Arrays in food => fruits: " . "<b>" . count($food["fruits"],1) . "<b>";
+*/
+
+
+
+
 
 ?>
