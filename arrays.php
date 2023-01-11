@@ -1,6 +1,6 @@
 <?php
 
-$cars = Array("BMW", "Mercedes", "Tesla", "Toyota");
+$cars = array("BMW", "Mercedes", "Tesla", "Toyota");
 $cars_2 = ["BMW", "Mercedes", "Tesla", "Toyota"];
 $fruits = array("apple", "banana", "orange");
 
@@ -59,9 +59,3 @@ $decodedJson = json_decode(($encodeJson));
 print_r($decodedJson);
 echo "How many Arrays in food => fruits: " . "<b>" . count($food["fruits"],1) . "<b>";
 */
-
-
-
-
-
-?>
