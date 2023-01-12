@@ -1,5 +1,5 @@
 <?php
-/*
+
 $fruits = array("apple", "banana", "orange");
 $age = ["Peter" => 34, "Parker" => 22, "Batman" => 55];
 $multiArray = [
@@ -48,6 +48,7 @@ $marks = [
     "Hassan" => ["physics" => 50, "chemistry" => 30, "maths" => 88],
     "Jibran" => ["physics" => 45, "chemistry" => 33, "maths" => 33],
     "Ebad" => ["physics" => 76, "chemistry" => 36, "maths" => 24],
+    "Ali" => ["physics" => 90, "chemistry" => 80, "maths" => 77],
 ];
 
 echo "<pre>";
@@ -57,13 +58,17 @@ echo "</pre>";
 
 echo "<table><thead><tr><th>Names</th><th>Physics</th><th>Chemistry</th><th>Maths</th></tr>";
 // where $marks is the Array and $names is the key of values
+
 foreach ($marks as $names => $val) {
     echo "<tr><td>";
     echo $names;
-
     foreach ($val as $subjects => $numbers) {
         echo "<td>" . $numbers . "</td>";
     }
     echo "</td></tr>";
 }
-echo "</table>";*/
+echo "</table>";
+
+$objMarks = json_encode($marks);
+echo "<pre>" . $objMarks . "</pre>";
+echo "<script>console.log('$objMarks')</script>";
