@@ -14,8 +14,6 @@ th,
 td {
   text-align: left;
   padding: 15px;
-  /* background-color: #eee;
-  color: #222; */
 }
 
 tr:nth-child(even) {
@@ -23,7 +21,17 @@ tr:nth-child(even) {
   color: #222;
 }
 
+tr {
+  background-color: silver;
+  color: #222;
+}
+
 th {
   background-color: #04aa6d;
   color: white;
+}
+
+tbody > tr:hover {
+  background: #ddd;
+  color: #000;
 }
