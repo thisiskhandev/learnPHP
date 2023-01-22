@@ -1,8 +1,20 @@
 <?php
+/*
+$fruits = array("apple", "banana", "orange");
+
+array_pop($fruits); // remove an item at last index
+array_push($fruits, "payapa", "malta"); // add an item at last index
+
+array_shift($fruits); // remove an item at 0 index
+array_unshift($fruits, "love", "papayar"); // add an item from 0 index
+
+echo "<pre>";
+print_r($fruits);
+echo "</pre>";
+
 
 $cars = array("BMW", "Mercedes", "Tesla", "Toyota");
 $cars_2 = ["BMW", "Mercedes", "Tesla", "Toyota"];
-$fruits = array("apple", "banana", "orange");
 
 /*
 $recursive_array = array(
@@ -58,7 +70,7 @@ echo "<br><h2>Decoded JSON</h2>";
 $decodedJson = json_decode(($encodeJson));
 print_r($decodedJson);
 echo "How many Arrays in food => fruits: " . "<b>" . count($food["fruits"],1) . "<b>";
-*/
+
 $a[] = "Anna";
 $a[] = "Brittany";
 $a[] = "Cinderella";
@@ -90,3 +102,96 @@ $a[] = "Ellen";
 $a[] = "Wenche";
 $a[] = "Vicky";
 echo print_r($a, 1);
+*/
+
+$sudents_1 = ["h" => "Hassan", "e" => "Elizabeth", "v" => "Vicy", "t" => "Toast"];
+$sudents_1_1 = ["h" => "Hassan", "q" => "Ellie", "b" => "Vicy", "a" => "Mouse"];
+$sudents_2 = ["h" => ["color" => ["red", "blue", "green"]], "Khizar", "John", null];
+$names = array("Hassan", "Monica", "Sofia", "Vicky", "Arthur");
+$age = array(25, 22, 30);
+
+// $stu1 = array_merge($sudents_1, $sudents_2);
+// $stu2 = array_merge_recursive($sudents_1, $sudents_2);
+// $sumStu = $sudents_1 + $sudents_2;
+// $combineArr = array_combine($names, $age);
+// $removeSlice = array_slice($names, 1);
+// $names2 = array("Johnatan", "Evita");
+// array_splice($names, count($names), 0, $age);
+// $keys = key_exists("v", $sudents_1); // true / false
+$comapreValues = array_intersect($sudents_1, $sudents_1_1); // It matches values
+$comapreKeys = array_intersect_key($sudents_1, $sudents_1_1); // It matches keys
+$comapreKeyVal = array_intersect_assoc($sudents_1, $sudents_1_1); // It matches keys & Values
+// $compareArry = array_uintersect_assoc($sudents_1, $sudents_1_1, "compareArrays"); // Custom compare array
+// function compareArrays($arr1, $arr2)
+// {
+//     if ($arr1 === $arr2) {
+//         echo "returning 0!";
+//         return 0; // Value matches
+//         // return 1; // Value a is bigger
+//         // return -1; // Value a is smaller
+//     }
+//     return ($arr1 > $arr2) ? 1 + "returning 1!" : -1 + "returning -1!";
+// }
+$colors_1 = array("r" => "red", "b" => "blue", "g" => "green", "m" => "magenta", "b" => "black");
+$colors_2 = array("r" => "red", "bl" => "blue", "g" => "green", "b" => "brown", "y" => "yellow");
+$colors_ind = array("red", "blue", "green", "brown", "black");
+$colors_ind2 = array("red", "blue", "green", "brown", "tomato");
+$diffKeys = array_diff_key($colors_1, $colors_2);
+$diffVals = array_diff($colors_ind, $colors_ind2);
+$diffKeyVal = array_diff_assoc($colors_1, $colors_2);
+
+$getValfromArr = array_values($colors_1);
+$getKeyArr = array_unique($colors_1);
+
+$studentData = array(
+    [
+        "id" => 1,
+        "fname" => "Hassan",
+        "lname" => "khan",
+        "phone" => ["primary" => +13216546, "secondary" => +1648979432],
+    ],
+    [
+        "id" => 2,
+        "fname" => "Jibran",
+        "lname" => "Ambani",
+    ],
+    [
+        "id" => 33,
+        "fname" => "John",
+        "lname" => "Wick",
+    ],
+    [
+        "id" => 4,
+        "fname" => "Vicky",
+        "lname" => "Donor",
+    ],
+);
+
+$nameWithAge = array("Cindy" => 34, "Amanda" => 10, "Chengis" => 89, "Linda" => 33);
+
+$arrColumn = array_column($studentData, "fname", "id");
+$cars = array("BMW", "Tesla", "Toyota", "Ford", "Ferrari");
+$chunkCars = array_chunk($cars, 3);
+
+$chunkKeysVals = array_chunk($nameWithAge, 3, true);
+
+$flipValsKeys = array_flip($nameWithAge);
+$flipValsKeysUcase = array_change_key_case($nameWithAge, CASE_UPPER);
+
+$nums = [10, 20, 30, 40, 50];
+$sumNums = array_sum($nums);
+$multiplyNums = array_product($nums);
+
+$randomArr = array_rand($nameWithAge, 2);
+echo "<pre>";
+// print_r($randomArr);
+// echo $colors_ind[$randomArr];
+// echo $nameWithAge[$randomArr[0]] . "<br>" . $nameWithAge[$randomArr[1]];
+
+array_walk($nameWithAge, "walkFun", "is a key of");
+function walkFun($value, $key, $param)
+{
+    echo "$key : $value  $param<br>";
+}
+
+echo "</pre>";
