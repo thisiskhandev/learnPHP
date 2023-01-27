@@ -58,7 +58,7 @@ echo "<br><h2>Decoded JSON</h2>";
 $decodedJson = json_decode(($encodeJson));
 print_r($decodedJson);
 echo "How many Arrays in food => fruits: " . "<b>" . count($food["fruits"],1) . "<b>";
-*/
+
 $a[] = "Anna";
 $a[] = "Brittany";
 $a[] = "Cinderella";
@@ -90,3 +90,4 @@ $a[] = "Ellen";
 $a[] = "Wenche";
 $a[] = "Vicky";
 echo print_r($a, 1);
+*/

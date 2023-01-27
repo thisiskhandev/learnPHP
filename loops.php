@@ -72,4 +72,18 @@ echo "</table>";
 $objMarks = json_encode($marks);
 echo "<pre>" . $objMarks . "</pre>";
 echo "<script>console.log('$objMarks')</script>";
+
+var_dump($marks);
 */
+
+$marks = [
+    "Hassan" => ["physics" => 50, "chemistry" => 30, "maths" => 88],
+    "Jibran" => ["physics" => 45, "chemistry" => 33, "maths" => 33],
+    "Ebad" => ["physics" => 76, "chemistry" => 36, "maths" => 24],
+    "Ali" => ["physics" => 90, "chemistry" => 80, "maths" => 77],
+];
+echo "<pre>";
+var_dump($marks); // will display below output in the screen.
+echo "<br><br><br><br><br><br><br><br>";
+print_r($marks); // will display below output in the screen.
+echo "</pre>";
