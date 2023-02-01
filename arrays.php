@@ -195,3 +195,124 @@ function walkFun($value, $key, $param)
 }
 
 echo "</pre>";
+
+echo "<br><h2>ARRAY MAP</h2><pre>";
+
+$a = [1, 2, 3, 4, 55];
+$b = ["lemon", "orange", "banana", "apple", "guava"];
+$c = [
+    "one" => "lemon",
+    "two" => "orange",
+    "three" => "banana",
+    "four" => "apple",
+];
+
+function square($n, $m)
+{
+    // return "$n = $m";
+    return [$n => $m];
+}
+
+function justFun($n)
+{
+    return strtoupper($n);
+}
+
+// $newArray = array_map('square', $a, $b); // It returns new array
+// $newArray = array_map(null, $a, $b); // It returns Multi dimentionals associative arrays
+$newArray = array_map("justFun", $c);
+
+print_r($newArray);
+
+echo "</pre>";
+
+echo "<br><h2>ARRAY REDUCE</h2><pre>";
+
+function arrReduceFun($carry, $m)
+{
+    // return $carry . " - " . $m;
+    return $carry - $m;
+}
+
+$reduce = array_reduce($a, "arrReduceFun", 56);
+
+print_r($reduce);
+echo "<br>";
+print_r(ucwords(implode(" ", $b)));
+
+echo "</pre><br><h2>ARRAY SORTING</h2><pre>";
+sort($a); // accending sort
+rsort($a); // deccending sort
+$random = [
+    "c" => "lemon",
+    "b" => "orange",
+    "d" => "banana",
+    "a" => "apple",
+];
+// arsort($random); // Accociative array sort by value
+ksort($random); // Key sort
+print_r($random);
+
+echo "<br><h3>Natural order sorting</h3>";
+# Natural order sorting
+$images = array("img12.png", "img18.png", "img15.png", "img5.png", "img10.png");
+natsort($images);
+print_r($images);
+
+echo "<br><h3>Natural Case order sorting</h3>";
+# Natural Case order sorting
+$images = array("Img12.png", "Img18.png", "imG15.png", "iMg5.png", "img10.png", "img11.jpg");
+
+// natcasesort($images);
+print_r($images);
+
+echo "<br><h3>Array Multi Sort</h3>";
+# Merge multiple arrays
+
+$fruity = array("orange", "banana", "apple");
+$vegie = array("lemon", "carrot", "cucumber");
+
+array_multisort($fruity, $vegie);
+
+print_r($fruity);
+print_r($vegie);
+
+echo "</pre><br><h2>ARRAY TRAVERSING</h2><pre>";
+
+$names3 = ["Samad", "Ali", "Aman", "Rehman", "Hassan", "Karan"];
+echo "<b>Current:</b> " . current($names3);
+echo "<br><b>Current Key:</b> " . key($names3);
+echo "<br><b>Current Position:</b> " . pos($names3);
+echo "<br><b>Next Position:</b> " . next($names3);
+echo "<br><b>Next Position 2:</b> " . next($names3);
+echo "<br><b>Previous Position:</b> " . prev($names3);
+echo "<br><b>End Position:</b> " . end($names3);
+echo "<br><b>Current Key Position:</b> " . key($names3);
+echo "<br><b>Reset Pointer:</b> " . reset($names3);
+
+echo "</pre><br><h2>Array: List() Function</h2><pre>";
+echo "<h3>Working with Index Array</h3>";
+$color1 = ["red", "green", "blue", "yellow", "orange"];
+# NOTE: list() function only works with index array or with accociative arrays which has Numeric keys.
+list($r, $g, $b, $y, $o) = $color1; // It will show all of them.
+// list($r, $g,  $y, $o) = $color1; // It will show only first and last element.
+// list(,,, $o) = $color1; // It will show only first and last element.
+
+echo "Value of r: $r <br>";
+echo "Value of g: $g <br>";
+echo "Value of b: $b <br>";
+echo "Value of y: $o <br>";
+
+echo "<h3>Working with Accosiative Array</h3>";
+
+$colorAss = [
+    0 => "red",
+    "1" => "skyblue", // It won't with Alpha Keys.
+    "2" => "black",
+];
+
+list($col1, $col2, $col3) = $colorAss;
+
+echo "Value of 0 ind: $col1 <br>";
+echo "Value of 1 ind: $col2 <br>";
+echo "Value of 2 ind: $col3 <br>";
