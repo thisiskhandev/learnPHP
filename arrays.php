@@ -132,6 +132,7 @@ $comapreKeyVal = array_intersect_assoc($sudents_1, $sudents_1_1); // It matches 
 //     }
 //     return ($arr1 > $arr2) ? 1 + "returning 1!" : -1 + "returning -1!";
 // }
+/*
 $colors_1 = array("r" => "red", "b" => "blue", "g" => "green", "m" => "magenta", "b" => "black");
 $colors_2 = array("r" => "red", "bl" => "blue", "g" => "green", "b" => "brown", "y" => "yellow");
 $colors_ind = array("red", "blue", "green", "brown", "black");
@@ -316,3 +317,4 @@ list($col1, $col2, $col3) = $colorAss;
 echo "Value of 0 ind: $col1 <br>";
 echo "Value of 1 ind: $col2 <br>";
 echo "Value of 2 ind: $col3 <br>";
+*/

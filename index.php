@@ -62,6 +62,7 @@ function display($number) {
     include "loops.php";
     include "conditions.php";
     include "arrays.php";
+    include "extrafun.php";
 
     ?>
 </body>

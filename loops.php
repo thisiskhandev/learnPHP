@@ -74,7 +74,7 @@ echo "<pre>" . $objMarks . "</pre>";
 echo "<script>console.log('$objMarks')</script>";
 
 var_dump($marks);
-*/
+
 
 $marks = [
     "Hassan" => ["physics" => 50, "chemistry" => 30, "maths" => 88],
@@ -87,3 +87,4 @@ var_dump($marks); // will display below output in the screen.
 echo "<br><br><br><br><br><br><br><br>";
 print_r($marks); // will display below output in the screen.
 echo "</pre>";
+*/
